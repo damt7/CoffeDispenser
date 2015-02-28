@@ -5,37 +5,29 @@
  */
 package coffeedespenser.logic;
 
+import coffeedespenser.enumerations.Producto;
+
 /**
  *
  * @author Damt
  */
 public class Usuario {
-    private int saldo;
-    private String opcionElegida;
-    private int devuelta;
+    private static int saldo=0;
+    private static Producto opcionElegida;
 
-    public int getSaldo() {
+    public static int getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
+    public static void setSaldo(int saldo) {
+        Usuario.saldo = saldo;
     }
 
-    public String getOpcionElegida() {
+    public static Producto getOpcionElegida() {
         return opcionElegida;
     }
 
-    public void setOpcionElegida(String opcionElegida) {
-        this.opcionElegida = opcionElegida;
-    }
-
-    public int getDevuelta() {
-        return devuelta;
-    }
-
-    public void setDevuelta(int devuelta) {
-        this.devuelta = devuelta;
-    }
-    
+    public static void setOpcionElegida(Producto opcionElegida) {
+        Usuario.opcionElegida = opcionElegida;
+    }        
 }

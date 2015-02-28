@@ -11,16 +11,17 @@ package coffeedespenser.enumerations;
  */
 public enum Producto {
 
-    CAFE("Cafe", 1000), 
-    CAPPUCINO("Cappucino", 100), 
-    MOKA("Cappucino", 100), 
-    CAFE_LECHE("Cappucino", 100),
-    EXPRESSO("Expresso",100);
+    CAFE("Cafe", 1200), 
+    CAPPUCINO("Cappucino", 2500), 
+    MOKA("Moka", 2000), 
+    CAFE_LECHE("Cappucino", 1800),
+    EXPRESSO("Expresso",2100),
+    AMERICANO("Americano",2400);
 
     private final String name;
     private final int value;
 
-    private Producto(String name, int value) {
+    private Producto(String name, int value) {  
         this.name = name;
         this.value = value;
     }
