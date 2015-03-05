@@ -154,6 +154,7 @@ public class App extends javax.swing.JFrame {
         );
 
         btn_M100.setText("100");
+        btn_M100.setEnabled(false);
         btn_M100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_M100ActionPerformed(evt);
@@ -161,6 +162,7 @@ public class App extends javax.swing.JFrame {
         });
 
         btn_M200.setText("200");
+        btn_M200.setEnabled(false);
         btn_M200.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_M200ActionPerformed(evt);
@@ -168,6 +170,7 @@ public class App extends javax.swing.JFrame {
         });
 
         btn_M500.setText("500");
+        btn_M500.setEnabled(false);
         btn_M500.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_M500ActionPerformed(evt);
@@ -220,6 +223,7 @@ public class App extends javax.swing.JFrame {
         );
 
         btn_B1000.setText("1000");
+        btn_B1000.setEnabled(false);
         btn_B1000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_B1000ActionPerformed(evt);
@@ -227,6 +231,7 @@ public class App extends javax.swing.JFrame {
         });
 
         btn_B2000.setText("2000");
+        btn_B2000.setEnabled(false);
         btn_B2000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_B2000ActionPerformed(evt);
@@ -234,6 +239,7 @@ public class App extends javax.swing.JFrame {
         });
 
         btn_B5000.setText("5000");
+        btn_B5000.setEnabled(false);
         btn_B5000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_B5000ActionPerformed(evt);
@@ -442,6 +448,7 @@ public class App extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lbl_OutDisplay.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_OutDisplay.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_OutDisplay.setText("...");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -531,58 +538,79 @@ public class App extends javax.swing.JFrame {
     private void btn_cafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cafeActionPerformed
         // TODO add your handling code here:
         lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.CAFE.getName()
-                + "<br></br>Oprima el boton S: para continuar o C: para cancelar...</html>");
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.CAFE);
     }//GEN-LAST:event_btn_cafeActionPerformed
 
     private void btn_cappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cappucinoActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("Ha elegido la opcion: " + Producto.CAPPUCINO.getName());
+        lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.CAPPUCINO.getName()
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.CAPPUCINO);
     }//GEN-LAST:event_btn_cappucinoActionPerformed
 
     private void btn_mokaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mokaActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("Ha elegido la opcion: " + Producto.MOKA.getName());
+        lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.MOKA.getName()
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.MOKA);
     }//GEN-LAST:event_btn_mokaActionPerformed
 
     private void btn_cafeLecheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cafeLecheActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("Ha elegido la opcion: " + Producto.CAFE_LECHE.getName());
+        lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.CAFE_LECHE.getName()
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.CAFE_LECHE);
     }//GEN-LAST:event_btn_cafeLecheActionPerformed
 
     private void btn_expressoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_expressoActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("Ha elegido la opcion: " + Producto.EXPRESSO.getName());
+        lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.EXPRESSO.getName()
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.EXPRESSO);
     }//GEN-LAST:event_btn_expressoActionPerformed
 
     private void btn_americanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_americanoActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("Ha elegido la opcion: " + Producto.AMERICANO.getName());
+        lbl_Display.setText("<html>Ha elegido la opcion: " + Producto.AMERICANO.getName()
+                + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
 
         Usuario.setOpcionElegida(Producto.AMERICANO);
     }//GEN-LAST:event_btn_americanoActionPerformed
 
     private void btn_siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_siguienteActionPerformed
         // TODO add your handling code here:
-        lbl_Display.setText("El valor es: " + Usuario.getOpcionElegida().getValue()
-                + " $, ingrese su dinero..");
+        if (Usuario.getSaldo() == 0) {
+            lbl_Display.setText("El valor es: " + Usuario.getOpcionElegida().getValue()
+                    + " $, ingrese su dinero..");
+            enableMoney(true);
+            enableOptions(false);
+        } else {
+            if (Usuario.getSaldo() >= Usuario.getOpcionElegida().getValue()) {
+                lbl_Display.setText("Disfrute su Cafe...");
+                lbl_OutDisplay.setText("<html>"
+                        + (Usuario.getSaldo() - Usuario.getOpcionElegida().getValue())
+                        + " $ &crarr;</html>");
+            }
+        }
+
     }//GEN-LAST:event_btn_siguienteActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         // TODO add your handling code here:
         lbl_Display.setText("Elija una opcion de Cafe..");
+        lbl_OutDisplay.setText("...");
 
         Usuario.setOpcionElegida(null);
         Usuario.setSaldo(0);
+
+        enableMoney(false);
+        enableOptions(true);
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_M100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_M100ActionPerformed
@@ -628,18 +656,38 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
         Usuario.setSaldo(Usuario.getSaldo() + 5000);
         lbl_Display.setText("Su saldo es: " + Usuario.getSaldo() + " $");
-        
+
         displaySaldo();
     }//GEN-LAST:event_btn_B5000ActionPerformed
 
     private void displaySaldo() {
         if (Usuario.getSaldo() < Usuario.getOpcionElegida().getValue()) {
             lbl_Display.setText("Su saldo es: " + Usuario.getSaldo() + " $"
-                    + ", saldo incompleto, faltan: " + (Usuario.getOpcionElegida().getValue() - Usuario.getSaldo())+"$");
+                    + ", saldo incompleto, faltan: " + (Usuario.getOpcionElegida().getValue() - Usuario.getSaldo()) + "$");
         } else {
             lbl_Display.setText("<html>Su saldo es: " + Usuario.getSaldo()
-                    + "<br>Oprima el S:para continuar o C:para cancelar</html>");
+                    + "<br></br>Oprima el boton S &rarr; continuar o C &not; cancelar...</html>");
+            enableMoney(false);
         }
+    }
+
+    private void enableMoney(boolean enable) {
+        btn_M100.setEnabled(enable);
+        btn_M200.setEnabled(enable);
+        btn_M500.setEnabled(enable);
+
+        btn_B1000.setEnabled(enable);
+        btn_B2000.setEnabled(enable);
+        btn_B5000.setEnabled(enable);
+    }
+
+    private void enableOptions(boolean enable) {
+        btn_americano.setEnabled(enable);
+        btn_cafe.setEnabled(enable);
+        btn_cafeLeche.setEnabled(enable);
+        btn_cappucino.setEnabled(enable);
+        btn_moka.setEnabled(enable);
+        btn_expresso.setEnabled(enable);
     }
 
     /**
@@ -686,19 +734,19 @@ public class App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_B1000;
-    private javax.swing.JButton btn_B2000;
-    private javax.swing.JButton btn_B5000;
-    private javax.swing.JButton btn_M100;
-    private javax.swing.JButton btn_M200;
-    private javax.swing.JButton btn_M500;
-    private javax.swing.JButton btn_americano;
-    private javax.swing.JButton btn_cafe;
-    private javax.swing.JButton btn_cafeLeche;
+    private static javax.swing.JButton btn_B1000;
+    private static javax.swing.JButton btn_B2000;
+    private static javax.swing.JButton btn_B5000;
+    private static javax.swing.JButton btn_M100;
+    private static javax.swing.JButton btn_M200;
+    private static javax.swing.JButton btn_M500;
+    private static javax.swing.JButton btn_americano;
+    private static javax.swing.JButton btn_cafe;
+    private static javax.swing.JButton btn_cafeLeche;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_cappucino;
-    private javax.swing.JButton btn_expresso;
-    private javax.swing.JButton btn_moka;
+    private static javax.swing.JButton btn_cappucino;
+    private static javax.swing.JButton btn_expresso;
+    private static javax.swing.JButton btn_moka;
     private javax.swing.JButton btn_siguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
